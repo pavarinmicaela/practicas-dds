@@ -1,4 +1,4 @@
-# Práctica de UI/UX Containerizada
+# Práctica de UI/UX
 
 Este repositorio contiene un proyecto para practicar UI/UX en el que se sirven interfaces HTML interactivas a través de un contenedor Docker basado en Nginx. El objetivo de la práctica es mejorar diseños de formularios existentes siguiendo buenas prácticas de usabilidad y experiencia de usuario.
 
