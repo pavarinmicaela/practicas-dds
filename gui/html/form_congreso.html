@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2: Inscripción al Congreso Internacional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+        }
+
+        /* Estilo para el bloque de expositores */
+        #expositorFields {
+            display: none;
+        }
+    </style>
+    <script> 
+        function toggleFields(value) { 
+            var expositorBlock = document.getElementById("expositorFields"); 
+            var pagoBlock = document.getElementById("pagoField"); 
+            if (value === "expositor") { 
+                expositorBlock.style.display = "block"; 
+                pagoBlock.style.display = "none"; 
+            } else { 
+                expositorBlock.style.display = "none"; 
+                pagoBlock.style.display = "block"; 
+            } 
+        } 
+        function pagar(){
+            alert('Redirigiendo a Mercado Pago...')
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Inscripción al Congreso Internacional</h1>
+        <p>Complete el formulario para inscribirse al congreso. Los asistentes deberán pagar a través de Mercado Pago,
+            mientras que los expositores subirán su trabajo.</p>
+    </header>
+    <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Datos Personales</legend> <label for="nombre">Nombre</label> <input type="text" id="nombre"
+                name="nombre" placeholder="Ingrese su nombre" required> <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+            <label for="documento">Número de Documento</label>
+            <input type="text" id="documento" name="documento" placeholder="Ingrese su número de documento" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tipo de Inscripción</legend>
+            <label for="tipoInscripcion">Seleccione el tipo de inscripción:</label>
+            <select id="tipoInscripcion" name="tipoInscripcion" onchange="toggleFields(this.value)" required>
+                <option value="">Seleccione una opción...</option>
+                <option value="asistente">Asistente (Pago requerido)</option>
+                <option value="expositor">Expositor (Subir trabajo)</option>
+            </select>
+        </fieldset>
+
+        <fieldset id="expositorFields">
+            <legend>Datos para Expositores</legend>
+            <label for="archivo">Subir archivo del trabajo</label>
+            <input type="file" id="archivo" name="archivo">
+        </fieldset>
+
+        <fieldset id="pagoField">
+            <legend>Información de Pago</legend>
+            <p>El pago se realizará exclusivamente a través de Mercado Pago.</p>
+            <button type="button" onclick="pagar()">Pagar con Mercado Pago</button>
+        </fieldset>
+
+        <button type="submit">Enviar Inscripción</button>
+    </form>
+</body>
+
+</html>
