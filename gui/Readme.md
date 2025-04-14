@@ -43,6 +43,7 @@ docker build -t practicas-dds-gui .
 ### Ejecutar el Contenedor:
 
 Para ejecutar el contenedor y montar el directorio "html" como volumen (de modo que los cambios realizados en los archivos HTML se reflejen de forma inmediata en el contenedor), utilizar el siguiente comando:
+(Reemplazar /c/github/practicas-dds/gui/html por la ruta a la carpeta local de tu máquina)
 
 ```
 docker run -d -p 80:80 -v /c/github/practicas-dds/gui/html:/usr/share/nginx/html practicas-dds-gui
